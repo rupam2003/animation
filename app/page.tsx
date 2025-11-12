@@ -141,10 +141,22 @@ useEffect(() => {
             }
             onClick={()=>{
               window.scrollTo(0,(window.innerHeight-10) * idx)
+              var audio = new Audio("https://assets.codepen.io/7558/shutter-fx-001.mp3");
+              audio.volume = 0.1;
+              audio.play();
+            }}
+            onHoverStart={()=>{
+              try {
+                var audio = new Audio("https://assets.codepen.io/7558/click-reverb-001.mp3");
+                audio.volume = 0.1;
+                audio.play();
+              } catch (error) {
+                console.log(error);
+              }
             }}
              className={`${current === idx+1 ? "text-white translate-x-2.5 ": ""} text-left px-4 tracking-tighter uppercase transition-all`} key={word}>
               {current === idx+1 && <span className='mr-5'>&#8226;</span>}
-              <span className={`${current === idx+1 ? "": ""} transition-all`} >{word}</span>
+              <span className={`${current === idx+1 ? "": ""} transition-all hover:text-white/80`} >{word}</span>
               </motion.button>
             </div>
             
@@ -162,9 +174,22 @@ useEffect(() => {
             }
             onClick={()=>{
               window.scrollTo(0,(window.innerHeight-10) * idx)
+              var audio = new Audio("https://assets.codepen.io/7558/shutter-fx-001.mp3");
+              audio.volume = 0.1;
+              audio.play();
+            }}
+            onHoverStart={()=>{
+              try {
+                var audio = new Audio("https://assets.codepen.io/7558/click-reverb-001.mp3");
+              audio.volume = 0.1;
+              audio.play();
+              } catch (error) {
+                console.log(error);
+              }
+              
             }}
              className={`${current === idx+1 ? "text-white -translate-x-2.5 ": ""} text-right px-4 tracking-tighter uppercase transition-all`} key={word}>
-              <span className={`${current === idx+1 ? "": ""} transition-all`} >{word}</span>
+              <span className={`${current === idx+1 ? "": ""} transition-all hover:text-white/80`} >{word}</span>
               {current === idx+1 && <span className='ml-5'>&#8226;</span>}
               </motion.button>
             </div>
